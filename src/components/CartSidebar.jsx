@@ -45,7 +45,7 @@ export default function CartSidebar({ isOpen, cart, onClose, onRemove }) {
                     <div className="p-6 border-t bg-gray-50">
                         <div className="flex justify-between mb-4 text-xl">
                             <span className="font-medium">Итого:</span>
-                            <span className="font-bold text-purple-600">{totalPrice.toLocalString('ru-RU')} P</span>
+                            <span className="font-bold text-purple-600">{totalPrice.toLocaleString('ru-RU')} P</span>
                         </div>
                         <button className="w-full bg-gradient-to-r from-purple-600 to-pink-500 text-white py-3 rounded-xl font-bold hover:opacity-90 transition-opacity shadow-lg">
                             Оформить заказ

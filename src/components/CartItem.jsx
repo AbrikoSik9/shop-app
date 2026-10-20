@@ -3,7 +3,7 @@ export default function CartItem({ item, onRemove }) {
         <div className="flex gap-3 bg-gray-50 rounded-xl p-3">
             <img src={item.image} alt={item.name} className="w-20 h-20 object-cover rounded-lg" />
             <div className="flex-1">
-                <h4 className="font-semibold">{image.name}</h4>
+                <h4 className="font-semibold">{item.name}</h4>
                 <p className="text-purple-600 font-bold">{item.price.toLocaleString('ru-Ru')} Р</p>
             </div>
             <button

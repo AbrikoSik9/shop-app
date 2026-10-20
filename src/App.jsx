@@ -31,9 +31,8 @@ export default function App() {
       <Header
         carCount={cart.length}
         onCartClick={() => setIsCartOpen(true)}
+        onAuthClick={openAuth}
       />
-
-      <button onClick={() => openAuth('register')}>Тест регистрации</button> {/*Потом удалить. Проверка регистрации и входа. */}
 
       <Hero />
 

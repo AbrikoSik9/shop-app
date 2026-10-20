@@ -9,7 +9,7 @@ export default function RegisterForm({ onSuccess, onSwitch }) {
     const [confirm, setConfirm] = useState('')
 
     const handleSubmit = (e) => {
-        e.preventeDefault()
+        e.preventDefault()
         if (password !== confirm) {
             setError('Пароли не совпадают')
             return
