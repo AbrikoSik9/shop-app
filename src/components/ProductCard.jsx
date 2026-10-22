@@ -1,36 +1,36 @@
-export default function ProductCard({ product, onAdd }) {
+export default function ProductCard({ product, onAdd}) {
     return (
-        <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group border border-gray-100">
-            <div className="relative overflow-hidden h-64">
+        <div className="group">
+            <div className="relative aspect-square overflow-hidden rounded-2xl bg-gray-50 mb-4">
                 <img
                     src={product.image}
                     alt={product.name}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
-                <span className="absolute top-3 left-3 bg-white/90 backdrop-blur px-3 py-1 rounded-lg text-xs font-medium">
-                    {product.category}
-                </span>
+                <button
+                    onClick={() => onAdd(product)}
+                    className="absolute bottom-3 right-3 w-10 h-10 bg-white text-gray-900 rounded-full shadow-lg shadow-black/10 hover:bg-black hover:text-white transition-all flex items-center justify-center opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 duration-300"
+                    title="Добавить в корзину"
+                >
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 4v16m8-8H4" />
+                    </svg>
+                </button>
             </div>
-            <div className="p-4">
-                <h3 className="font-bold text-lg mb-1">{product.name}</h3>
-                <div className="flex items-center gap-1 mb-3">
-                    <span className="text-yellow-500">w</span>
-                    <span className="text-sm text-gray-600">{product.rating}</span>
+
+            <div className="px-1">
+                <p className="text-xs uppercase tracking-wider text-gray-500 mb-1.5">
+                    {product.category}
+                </p>
+                <div className="flex items-start justify-between gap-2">
+                    <h3 className="font-medium text-base leading-snug">{product.name}</h3>
+                    <div className="flex items-center gap-1 text-xs text-gray-500 flex-shrink-0">
+                        {product.rating}
+                    </div>
                 </div>
-                <div className="flex items-center justify-between">
-                    <span className="text-2xl font-bold text-purple-600">
-                        {product.price.toLocaleString('ru-Ru')} R
-                    </span>
-                    <button
-                        onClick={() => onAdd(product)}
-                        className="bg-purple-600 hover:bg-purple-700 text-white p-2 rounded-xl transition-colors"
-                        title="В корзину"
-                    >
-                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4"/>
-                        </svg>
-                    </button>
-                </div>
+                <p className="text-lg font-semibold tracking-tight mt-1 text-red-500">
+                    {product.price.toLocaleString('ru-Ru')} RUB
+                </p>
             </div>
         </div>
     )

@@ -8,8 +8,8 @@ export default function Categories({ categories, active, onChange }) {
                         onClick={() => onChange(cat)}
                         className={`px-6 py-2 rounded-xl whitespace-nowrap transition-all font-medium ${
                             active === cat
-                                ? 'bg-purple-600 text-white shadow-lg shadow-purple-200'
-                                : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200'
+                                ? 'bg-black text-white'
+                                : 'bg-gray-50 text-gray-500 hover:text-gray-900'
                         }`}
                     >
                         {cat}
